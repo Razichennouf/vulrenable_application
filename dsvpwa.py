@@ -14,10 +14,10 @@ def main():
 
     parser = argparse.ArgumentParser(prog='DSVPWA',
         description='Damn Simple Vulnerable Python Web Application')
-    parser.add_argument('--host', default='127.0.0.1',
-        help='set the IP address to bind to (defaults to 127.0.0.1)')
-    parser.add_argument('--port', type=int, default=os.getenv('DSVPWA_PORT', 65413),
-        help='set the port number to bind to (defaults to 65413)')
+    parser.add_argument('--host', default='0.0.0.0',
+        help='set the IP address to bind to (defaults to 0.0.0.0)')
+    parser.add_argument('--port', type=int, default=os.getenv('DSVPWA_PORT', 80),
+        help='set the port number to bind to (defaults to 80)')
     parser.add_argument('--risk', type=int, default=os.getenv('DSVPWA_RISK', 1), choices=range(1,4),
         help='set the risk level in the range 1-3')
     parser.add_argument('--ssl', action='store_true', default=os.getenv('DSVPWA_SSL', 0),
